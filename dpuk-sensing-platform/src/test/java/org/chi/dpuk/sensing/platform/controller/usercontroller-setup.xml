@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <User	id='10' 
+    		userName='admin1'
+    		passwordHash='adbcd080140eefb43aa31c75e7d3523b1c46a294bfe8847327190eed0a858524'
+        	email='rajesh.bhadra@manchester.ac.uk'
+        	title='Mr'
+        	firstName='Rajesh'
+        	lastName='Bhadra'
+        	role='ROLE_ADMIN'>        
+    </User>
+</dataset>

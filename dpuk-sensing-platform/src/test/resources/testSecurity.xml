@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+	http://www.springframework.org/schema/security 
+	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+	<http create-session="never">
+		<!-- Disable Cross Site Request Forgery (CSRF) -->
+		<csrf disabled="true"/>
+
+		<intercept-url pattern="/**" access="hasRole('ROLE_ADMIN')" />
+
+		<http-basic entry-point-ref="customBasicAuthenticationEntryPoint" />
+	</http>
+
+	<!-- When authentication fails this stops the "WWW-Authenticate" header 
+		from being sent to the browser with the 401 response. Which in turn stops 
+		the browser from popping up its own login dialog, and allows us to handle 
+		401 codes in javascript. -->
+		
+	<beans:bean id="customBasicAuthenticationEntryPoint"
+		class="org.chi.dpuk.sensing.platform.security.CustomBasicAuthenticationEntryPoint" />
+
+	<!-- TODO: Change this! -->
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="customUserDetailsService">
+			<password-encoder hash="plaintext" />
+		</authentication-provider>
+	</authentication-manager>
+
+</beans:beans>

@@ -1,0 +1,41 @@
+<h3>{{formTitle}}</h3>
+<div ng-form name='userForm' novalidate >
+
+	<div class='form-group'>
+    	<label for='inputEmail'>Email</label>
+		<input id='inputEmail' class="form-control" type='email' name='email' ng-model='user.email'>
+		<span ng-show="!isFormSubmissionAttempted && userForm.email.$touched && userForm.email.$error.email">Invalid email address.</span>
+		<span ng-show='isFormSubmissionAttempted && userForm.email.$invalid'>If an email is provided, it must be valid.</span>
+	</div>
+	
+	<div class='form-group'>
+		<label for='inputTitle'>Title</label>
+		<input id='inputTitle' class='form-control' type='text' name='title' ng-model='user.title' >
+	</div>
+	
+	<div class='form-group'>
+		<label for='inputFirstName'>First Name</label>
+		<input id='inputFirstName'  class='form-control' type='text' name='firstname' ng-model='user.firstName'>
+	</div>
+	
+	<div class='form-group'>
+		<label for='inputLastName'>Last Name</label>
+		<input id='inputLastName'  class='form-control' type='text' name='lastname' ng-model='user.lastName'>
+	</div>
+	
+	<div class='form-group'>
+		<label  for='inputRole'>User Role</label>
+		<select id='inputRole'  class='form-control' ng-model='user.role' name='role' required>
+			<option value='ROLE_ADMIN'>Administrator</option>
+			<option value='ROLE_RESEARCHER'>Researcher</option>
+		</select>
+	</div>
+
+    <div class='controls-row'>
+        <div class='control-group pull-right'>
+            <button class='btn btn-primary' type='button' id='save' ng-click='save()'>Save</button>
+		    <button class='btn btn-primary' type='button' id='cancel' ng-click='cancel()'>Cancel</button>
+        </div>
+    </div>
+
+</div>

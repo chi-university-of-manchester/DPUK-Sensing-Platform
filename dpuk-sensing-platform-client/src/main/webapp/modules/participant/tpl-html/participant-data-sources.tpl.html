@@ -1,0 +1,40 @@
+<div id='participantDataSources'>
+	<h3>{{participantName}} : Data Sources</h3>
+	<div class='controls-row'>
+        <div class='control-group pull-left'>
+            <a class='btn btn-primary' ui-sref='app.dataSourceAdd({ participantId: {{participantId}}})'>Add Data Source</a>
+        </div>
+    </div>
+	<div class='row'>
+		<table class='table table-bordered table-striped table-hover table-condensed'>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th>Type</th>
+					<th>User Name</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='dataSource in dataSources'>
+					<td>{{dataSource.name}}</td>
+					<td>{{dataSource.description}}</td>
+					<td>{{dataSource.type}}</td>
+					<td>{{dataSource.userName}}</td>
+					<td class='controls'>
+						<a class='btn btn-danger btn-small' ng-click='deleteDataSource(dataSource.id)'>Delete</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.dataSourceDataSets({ dataSourceId: dataSource.id, dataSourceName: dataSource.name })'>Data Sets</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.dataSourceEdit({ dataSourceId: dataSource.id })'>Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

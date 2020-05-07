@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<User id='1010' userName='admin100'
+		passwordHash='adbcd080140eefb43aa31c75e7d3523b1c46a294bfe8847327190eed0a858524'
+		email='first.last@manchester.ac.uk' title='Mr' firstName='First'
+		lastName='Last' role='ROLE_ADMIN'>
+	</User>
+	<Study id='1000' name='Study Name 1' description='Study Description 1'>
+	</Study>
+	<Study id='1020' name='Study Name 2' description='Study Description 2'>
+	</Study>
+</dataset>

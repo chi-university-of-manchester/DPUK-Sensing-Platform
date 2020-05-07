@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Participant id='1050' name='one name' address='one address'
+		contactNumber='01132456789' nhsNumber='0123456789' study_id='1000'>
+	</Participant>
+	<Study id='1000' name='Study Name' description='Study Description'>
+	</Study>
+</dataset>

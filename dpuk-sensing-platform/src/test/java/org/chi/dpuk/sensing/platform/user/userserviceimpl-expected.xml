@@ -1,0 +1,8 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+	<User userName='researcher'
+		email='researcher.first.name@manchester.ac.uk' title='Mr'
+		firstName='Researcher First Name' lastName='Researcher Last Name'
+		role='ROLE_RESEARCHER'>
+	</User>
+</dataset>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<DataSource name='Updated DataSource Name' description='Updated DataSource Description'
+		type='Updated DataSource Type' userName='UpdatedDataSourceUserName'>
+	</DataSource>
+</dataset>

@@ -1,0 +1,40 @@
+<div id='studyParticipants'>
+	<h3>{{studyName}} : Participants</h3>
+	<div class='controls-row'>
+        <div class='control-group pull-left'>
+            <a class='btn btn-primary' ui-sref='app.participantAdd({ studyId: {{studyId}}})'>Add Participant</a>
+        </div>
+    </div>
+	<div class='row'>
+		<table class='table table-bordered table-striped table-hover table-condensed'>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Address</th>
+					<th>Contact Number</th>
+					<th>NHS Number</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='participant in participants'>
+					<td>{{participant.name}}</td>
+					<td>{{participant.address}}</td>
+					<td>{{participant.contactNumber}}</td>
+					<td>{{participant.nhsNumber}}</td>
+					<td class='controls'>
+						<a class='btn btn-danger btn-small' ng-click='deleteParticipant(participant.id)'>Delete</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.participantDataSources({ participantId: participant.id , participantName: participant.name })'>Data Sources</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.participantEdit({ participantId: participant.id })'>Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

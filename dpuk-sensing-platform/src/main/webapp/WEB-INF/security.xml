@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+	xmlns:beans="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd 
+	http://www.springframework.org/schema/security 
+	http://www.springframework.org/schema/security/spring-security-4.0.xsd">
+
+	<http create-session="never">
+		<!-- Disable Cross Site Request Forgery (CSRF) -->
+		<csrf disabled="true" />
+
+		<intercept-url pattern="/api/authentication/currentUser" access="permitAll" method="GET" />
+		<intercept-url pattern="/api/authentication/signIn" access="permitAll" method="POST" />
+		<intercept-url pattern="/api/authentication/signOut" access="permitAll" method="POST" />
+		
+		<intercept-url pattern="/api/dataSet/dataSource/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/dataSet/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/dataSet/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="DELETE" />
+		
+		<intercept-url pattern="/api/dataSource" access="hasAnyRole('ROLE_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/dataSource" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/dataSource/addDataSetToDataSource/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/dataSource/postDataSet" access="permitAll" method="POST" /> <!-- This is the external API that devices will use to post data sets to the system. -->
+		<intercept-url pattern="/api/dataSource/addParticipantToDataSource/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/dataSource/dataSet/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/dataSource/participant/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/dataSource/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="DELETE" />
+		<intercept-url pattern="/api/dataSource/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/dataSource/doesDataSourceExist" access="permitAll" method="GET" />
+		
+		<intercept-url pattern="/api/participant" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/participant" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/participant/addDataSourcesToParticipant/*/*" access="hasAnyRole('ROLE_SERVICE')" method="POST" />
+		<intercept-url pattern="/api/participant/addDataSourceToParticipant/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/participant/addStudyToParticipant/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/participant/dataSource/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/participant/study/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/participant/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="DELETE" />
+		<intercept-url pattern="/api/participant/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		
+		<intercept-url pattern="/api/study" access="hasAnyRole('ROLE_ADMIN')" method="POST" />
+		<intercept-url pattern="/api/study" access="hasAnyRole('ROLE_ADMIN', 'ROLE_SERVICE')" method="GET" />
+		<intercept-url pattern="/api/study/addParticipantsToStudy/*/*" access="hasAnyRole('ROLE_SERVICE')" method="POST" />
+		<intercept-url pattern="/api/study/addParticipantToStudy/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="POST" />
+		<intercept-url pattern="/api/study/addUsersToStudy/*/*" access="hasAnyRole('ROLE_SERVICE')" method="POST" />
+		<intercept-url pattern="/api/study/addUserToStudy/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="POST" />
+		<intercept-url pattern="/api/study/doesStudyExist" access="hasAnyRole('ROLE_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/study/participant" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET " />
+		<intercept-url pattern="/api/study/participant/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />	
+		<intercept-url pattern="/api/study/user" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/study/user/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/study/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/study/*" access="hasAnyRole('ROLE_ADMIN')" method="DELETE" />
+		
+		<intercept-url pattern="/api/user" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />		 
+		<intercept-url pattern="/api/user" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="POST" />
+		<intercept-url pattern="/api/user/addStudiesToUser/*/*" access="hasAnyRole('ROLE_SERVICE')" method="POST" />
+		<intercept-url pattern="/api/user/addStudyToUser/*/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="POST" />
+		<intercept-url pattern="/api/user/doesUserExist" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />
+		<intercept-url pattern="/api/user/study" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/user/study/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN', 'ROLE_RESEARCHER')" method="GET" />
+		<intercept-url pattern="/api/user/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="DELETE" />
+		<intercept-url pattern="/api/user/*" access="hasAnyRole('ROLE_ADMIN', 'ROLE_RESEARCHER_ADMIN')" method="GET" />
+		
+		<http-basic entry-point-ref="customBasicAuthenticationEntryPoint" />
+	</http>
+
+	<!-- When authentication fails this stops the "WWW-Authenticate" header 
+		from being sent to the browser with the 401 response. Which in turn stops 
+		the browser from popping up its own login dialog, and allows us to handle 
+		401 codes in javascript. -->
+
+	<beans:bean id="customBasicAuthenticationEntryPoint"
+		class="org.chi.dpuk.sensing.platform.security.CustomBasicAuthenticationEntryPoint" />
+
+	<beans:bean id="passwordEncoder"
+		class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+		<beans:constructor-arg name="strength" value="10" />
+	</beans:bean>
+
+	<authentication-manager alias="authenticationManager">
+		<authentication-provider user-service-ref="customUserDetailsService">
+			<password-encoder ref="passwordEncoder" />
+		</authentication-provider>
+	</authentication-manager>
+	
+
+</beans:beans>

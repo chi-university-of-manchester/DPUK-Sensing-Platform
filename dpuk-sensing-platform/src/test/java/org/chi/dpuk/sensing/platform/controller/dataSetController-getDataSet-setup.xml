@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<DataSet id='100' startDate='2015-10-15 14:15:00.123' endDate='2015-10-15 15:15:00.456'
+		payload='xmxmxmxmxmxmxmxmxmxmxmxmxmxxmxmxmxmxmxmxmxmxmxmxmxmxmx'
+		payloadContentType='Payload Content Type 1' payloadNameWithExtension='Payload Name With Extension 1' />
+	<DataSet id='200' startDate='2015-10-15 14:15:00.123' endDate='2015-10-15 15:15:00.456'
+		payload='xmxmxmxmxmxmxmxmxmxmxmxmxmx' payloadContentType='Payload Content Type 1'
+		payloadNameWithExtension='Payload Name With Extension 1' />
+</dataset>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Study id='1000' name='Study Name' description='Study Description'>
+	</Study>
+	<Participant id='1050' name='one name' address='one address'
+		contactNumber='01132456789' study_id='1000'>
+	</Participant>
+	<Participant id='1100' name='two name' address='two address'
+		contactNumber='01324252627' study_id='1000'>
+	</Participant>
+</dataset>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Participant id='1050' name='one name' address='one address'
+		contactNumber='01132456789'>
+	</Participant>
+	<DataSource id='1100' name='DataSource Name 1' description='DataSource Description 1'
+		type='DataSource Type 1' userName='DataSourceUserName1'
+		participant_id='1050'>
+	</DataSource>
+</dataset>

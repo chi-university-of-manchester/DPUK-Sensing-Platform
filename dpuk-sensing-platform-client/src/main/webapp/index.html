@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang='en' id='ng-app' ng-app='app'>
+<head>
+	<meta http-equiv='content-type' content='text/html; charset=UTF-8'>
+	<meta charset='utf-8'>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'>
+	<title>DPUK Sensing Platform</title>
+	<link href='lib/bootstrap/css/bootstrap.css' rel='stylesheet' type='text/css' />
+	<link href='css/dpuk.css' rel='stylesheet' type='text/css' />
+</head>
+<body ng-controller='AppController'>
+	<!-- Main container -->
+	<div class='container-fluid'>
+		<div class='row-fluid'>
+			<!-- Main view - all the other controllers are within this scope. -->
+			<div class='span10'>
+				<div ui-view></div>
+			</div>
+
+		</div>
+	</div>
+	
+	<!-- Scripts loaded here to increase page load speed -->
+	<script src='lib/bootstrap/js/jquery-2.1.4.js'></script>
+	<script src='lib/bootstrap/js/bootstrap.js'></script>
+	<script src='lib/angular/angular.js'></script>
+	<script src='lib/angular/angular-ui-router.js'></script>
+	<script src='lib/angular/angular-resource.js'></script>
+	<script src='lib/angular/angular-modal-service/angular-modal-service.js'></script>
+	<script src='lib/moment.js'></script>
+	<script src='modules/app/app-modules.js'></script>
+	<script src='modules/app/app-states.js'></script>
+	<script src='lib/bootstrap/js/ui-bootstrap-tpls-1.1.2.js'></script>
+	<script src='modules/app/controllers/app-controller.js'></script>
+	<script src='modules/app/controllers/homepage-controller.js'></script>
+	<script src='modules/authentication/controllers/authentication-controller.js'></script>
+	<script src='modules/authentication/services/authentication-service.js'></script>
+	<script src='modules/authentication/services/interceptor-service.js'></script>
+	<script src='modules/authentication/authentication-config.js'></script>
+	<script src='modules/common/services/history-service.js'></script>
+	<script src='modules/common/services/utility-service.js'></script>
+	<script src='modules/common/directives/empty-to-null-directive.js'></script>
+	<script src='modules/common/controllers/yes-no-dialog-controller.js'></script>
+	<script src='modules/common/services/file-upload-service.js'></script>
+	<script src='modules/common/directives/file-model-directive.js'></script>
+	<script src='modules/footer/controllers/footer-controller.js'></script>
+	<script src='modules/menu/controllers/menu-controller.js'></script>
+	<script src='modules/study/directives/unique-name-directive.js'></script>
+	<script src='modules/study/controllers/study-add-controller.js'></script>
+	<script src='modules/study/controllers/study-edit-controller.js'></script>
+	<script src='modules/study/controllers/study-participants-controller.js'></script>
+	<script src='modules/study/controllers/study-users-controller.js'></script>
+	<script src='modules/study/services/add-user-to-study-service.js'></script>
+	<script src='modules/study/services/study-participants-service.js'></script>
+	<script src='modules/study/services/study-service.js'></script>
+	<script src='modules/study/services/study-users-service.js'></script>
+	<script src='modules/study/services/delete-study-service.js'></script>
+	<script src='modules/user/services/user-studies-service.js'></script>
+	<script src='modules/user/controllers/user-studies-controller.js'></script>
+	<script src='modules/user/controllers/users-view-controller.js'></script>
+	<script src='modules/user/controllers/user-edit-controller.js'></script>
+	<script src='modules/user/controllers/user-add-controller.js'></script>
+	<script src='modules/user/services/users-view-service.js'></script>
+	<script src='modules/user/services/user-service.js'></script>
+	<script src='modules/user/directives/unique-user-name-directive.js'></script>
+	<script src='modules/user/services/delete-user-service.js'></script>
+	<script src='modules/participant/controllers/participant-data-sources-controller.js'></script>
+	<script src='modules/participant/controllers/participant-add-controller.js'></script>
+	<script src='modules/participant/controllers/participant-edit-controller.js'></script>
+	<script src='modules/participant/services/participant-data-sources-service.js'></script>
+	<script src='modules/participant/services/participant-service.js'></script>
+	<script src='modules/participant/services/add-study-to-participant-service.js'></script>
+	<script src='modules/participant/services/delete-participant-service.js'></script>
+	<script src='modules/dataSource/controllers/data-source-add-controller.js'></script>
+	<script src='modules/dataSource/controllers/data-source-edit-controller.js'></script>
+	<script src='modules/dataSource/services/data-source-service.js'></script>
+	<script src='modules/dataSource/controllers/add-data-set-to-data-source-controller.js'></script>
+	<script src='modules/dataSource/services/add-participant-to-data-source-service.js'></script>
+	<script src='modules/dataSource/controllers/data-source-data-sets-controller.js'></script>
+    <script src='modules/dataSource/services/data-source-data-sets-service.js'></script>
+    <script src='modules/dataSource/services/delete-data-source-service.js'></script>
+    <script src='modules/dataSource/directives/unique-user-name-directive.js'></script>
+	<script src='modules/dataSet/services/delete-data-set-service.js'></script>
+	<script src='modules/dataSet/services/download-data-set-service.js'></script>
+    
+</body>
+</html>

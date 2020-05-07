@@ -1,0 +1,40 @@
+<div id='userStudies'>
+	<h3>{{userName}} : Studies</h3>
+    <div class='controls-row'>
+        <div class='control-group pull-left'>
+            <a class='btn btn-primary' ui-sref='app.studyAdd({ userId: {{userId}}})'>Add</a>
+        </div>
+    </div>
+    <div class='row'>
+        <table class='table table-bordered table-striped table-hover table-condensed'>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Description</th>
+					<th></th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='study in studies'>
+					<td>{{study.name}}</td>
+					<td>{{study.description}}</td>
+					<td class='controls'>
+						<a class='btn btn-danger btn-small' ng-click='deleteStudy(study.id)'>Delete</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.studyUsers({ studyId: study.id , studyName: study.name })'>Users</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.studyParticipants({ studyId: study.id , studyName: study.name })'>Participants</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.studyEdit({ studyId: study.id })'>Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

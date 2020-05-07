@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+    <User	userName='admin1'    		
+        	email='rajesh.bhadra@manchester.ac.uk'
+        	title='Mr'
+        	firstName='Rajesh'
+        	lastName='Bhadra'
+        	role='ROLE_ADMIN'>        
+    </User>
+</dataset>

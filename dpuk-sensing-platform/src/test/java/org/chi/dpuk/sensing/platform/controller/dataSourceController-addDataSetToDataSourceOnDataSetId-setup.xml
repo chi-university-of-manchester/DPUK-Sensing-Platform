@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<DataSource id='1000' name='DataSource Name 1' description='DataSource Description 1'
+		type='DataSource Type 1' userName='DataSourceUserName1' password='DataSource Password 1'>
+	</DataSource>
+	<DataSet id='1100' startDate='2015-10-15 14:15:00.123' endDate='2015-10-15 15:15:00.456'
+		payload='xmxmxmxmxmxmxmxmxmxmxmxmxmx' />
+</dataset>

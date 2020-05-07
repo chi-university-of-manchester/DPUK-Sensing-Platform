@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<DataSource id='1' name='DataSource Name' description='DataSource Description'
+		type='DataSource Type' userName='DataSourceUserName' password='DataSource Password'>
+	</DataSource>
+	
+</dataset>

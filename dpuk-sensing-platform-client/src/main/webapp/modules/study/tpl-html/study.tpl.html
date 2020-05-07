@@ -1,0 +1,25 @@
+<h3>{{formTitle}}</h3>
+<div id='studyForm' ng-form name='studyForm' novalidate>
+	<div class='form-group'>
+		<label for='inputName'>Name</label>
+		<input id='inputName' class='form-control' type='text' name='name' ng-model='study.name' unique-name required ng-minlength='3'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && studyForm.name.$touched && studyForm.name.$error.required'>Please enter a name.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && studyForm.name.$touched && studyForm.name.$error.unique'>Name is taken, please try another.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && studyForm.name.$touched && studyForm.name.$error.minlength'>Name must be at least three characters.</span>
+	</div>
+	<div class='form-group'>
+		<label for='inputDescription'>Description</label>
+		<input id='inputDescription' class='form-control' type='text' name='description' ng-model='study.description'/>
+	</div>
+	<div>
+		<button type='button' class='btn btn-primary' ng-click='save()'>Save</button>
+		<button type='button' class='btn' ng-click='cancel()'>Cancel</button>
+	</div>
+	<div class='ct-error-text top-buffer bottom-buffer'>
+		<div ng-show='isFormSubmissionAttempted && studyForm.name.$invalid'>Name must be unique and at least three characters.</div>
+	</div>
+</div>
+
+
+			
+

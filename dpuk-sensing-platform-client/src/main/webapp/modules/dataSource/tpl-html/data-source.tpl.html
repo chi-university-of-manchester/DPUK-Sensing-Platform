@@ -1,0 +1,45 @@
+<h3>{{formTitle}}</h3>
+<div id='dataSourceForm' ng-form name='dataSourceForm' novalidate>
+	<div class='form-group'>
+		<label for='inputName'>Name</label>
+		<input id='inputName' class='form-control' type='text' name='name' ng-model='dataSource.name' required ng-minlength='3'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.name.$touched && dataSourceForm.name.$error.required'>Please enter a name.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.name.$touched && dataSourceForm.name.$error.minlength'>Name must be at least 3 characters.</span>
+	</div>
+	<div class='form-group'>
+		<label for='inputDescription'>Description</label>
+		<input id='inputDescription' class='form-control' type='text' name='description' ng-model='dataSource.description' required/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.description.$touched && dataSourceForm.description.$error.required'>Please enter a description.</span>
+	</div>
+	<div class='form-group'>
+		<label for='inputType'>Type</label>
+		<input id='inputType' class='form-control' type='text' name='type' ng-model='dataSource.type'/>
+	</div>
+	<div class='form-group'>
+		<label for='inputUserName'>User Name</label>
+		<input id='inputUserName' class='form-control' type='text' name='userName' ng-model='dataSource.userName' unique-user-name required ng-minlength='5' ng-maxlength='32' ng-pattern='/^[0-9a-zA-Z]+$/'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.userName.$touched && dataSourceForm.userName.$error.required'>Please enter a user name.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.userName.$touched && dataSourceForm.userName.$error.unique'>User name is taken, please try another.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.userName.$touched && dataSourceForm.userName.$error.minlength'>User name must be at least 5 characters.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.userName.$touched && dataSourceForm.userName.$error.maxlength'>User name must be a maximum of 32 characters.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.userName.$touched && dataSourceForm.userName.$error.pattern'>User name may only contain alphanumeric characters.</span>
+	</div>
+	<div class='form-group'>
+		<label for='inputPassword'>Password</label>
+		<input id='inputPassword' class='form-control' type='text' name='password' ng-model='dataSource.password' required ng-minlength='10' ng-maxlength='72'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.password.$touched && dataSourceForm.password.$error.required'>Please enter a password.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.password.$touched && dataSourceForm.password.$error.minlength'>Password must be at least 10 characters.</span>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSourceForm.password.$touched && dataSourceForm.password.$error.maxlength'>Password must be a maximum of 72 characters.</span>
+	</div>
+	<div>
+		<button type='button' class='btn btn-primary' ng-click='save()'>Save</button>
+		<button type='button' class='btn' ng-click='cancel()'>Cancel</button>
+	</div>
+	<div class='ct-error-text top-buffer bottom-buffer'>
+		<div ng-show='isFormSubmissionAttempted && dataSourceForm.name.$invalid'>Please enter a name with at least three characters.</div>
+		<div ng-show='isFormSubmissionAttempted && dataSourceForm.description.$invalid'>Please enter a description.</div>
+		<div ng-show='isFormSubmissionAttempted && dataSourceForm.userName.$invalid'>Please enter a unique user name with at least 5 alphanumeric characters and a maximum of 32 alphanumeric characters.</div>
+		<div ng-show='isFormSubmissionAttempted && dataSourceForm.password.$invalid'>Please enter a password with at least 10 characters and a maximum of 72 characters.</div>
+	</div>
+	
+</div>

@@ -1,0 +1,23 @@
+<div class='span4 offset5' align='center'>
+	<div id='authentication'>
+		<img src='images/dementias-platform-uk-logo.png' />
+    </div>
+	<div id='authentication-form'>
+		<form name='form' autocomplete='off' novalidate>
+			<div>
+				<label>User Name</label>
+				<input id='userName' type='text' name='userName' placeholder='User Name' required autofocus ng-model='user.userName'>
+				<div class='auth-error' ng-show='form.$submitted || form.userName.$touched'>
+					<div ng-show='form.userName.$error.required'>Please enter a user name.</div>
+				</div>
+				<label>Password</label>
+				<input id='password' type='password' name='password' placeholder='Password' required ng-model='user.password'>
+				<div class='auth-error' ng-show='form.$submitted || form.userName.$touched'>
+					<div ng-show='form.password.$error.required'>Please enter a password.</div>
+				</div>
+				<div class='auth-error' ng-show='authError'>Invalid user name or password combination.</div>
+				<button class='btn btn-primary' ng-click='signIn()' ng-disabled='form.$invalid'>Sign In</button>
+			</div>
+		</form>
+	</div>
+</div>

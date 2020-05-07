@@ -1,0 +1,39 @@
+<div id='viewUsers'>
+	<h3>Users</h3>
+	<div class='controls-row'>
+		<div class='control-group pull-left'>
+			<a class='btn btn-primary' ui-sref='app.userAdd()'>Add User</a>
+		</div>
+	</div>
+	<div class='row'>
+		<table class='table table-bordered table-striped table-hover table-condensed'>
+			<thead>
+				<tr>
+					<th>User Name</th>
+					<th>Name</th>
+					<th>Email</th>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat='user in users'>
+					<td>{{user.userName}}</td>
+					<td>{{user.fullNameWithTitle}}</td>
+					<td>{{user.email}}</td>
+					<td class='controls'>
+						<a class='btn btn-danger btn-small' ng-click='deleteUser(user.id)'>Delete</a>
+					</td>
+					<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.userStudies({ userId: user.id, userName: user.userName })'>Studies</a>
+					</td>
+						<td class='controls'>
+						<a class='btn btn-primary btn-small' ui-sref='app.userEdit({ userId: user.id })'>Edit</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>

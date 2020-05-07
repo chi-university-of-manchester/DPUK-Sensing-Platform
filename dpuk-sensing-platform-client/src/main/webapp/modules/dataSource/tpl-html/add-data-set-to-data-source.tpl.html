@@ -1,0 +1,27 @@
+<h3>{{formTitle}}</h3>
+<div id='dataSetForm' ng-form name='dataSetForm' novalidate>
+	<div class='form-group'>
+		<label for='startDate'>Start Date</label>
+		<input type='text' class='form-control' name='startDate' uib-datepicker-popup ng-model='startDate' is-open='startDateConfig.opened' max-date='endDate' required close-text='Close'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSetForm.startDate.$touched && dataSetForm.startDate.$error.required'>Please enter a start date.</span>
+		<span class='input-group-btn'>
+			<button type='button' class='btn btn-default' ng-click='startDateConfig.open()'><i class='glyphicon glyphicon-calendar'></i></button>
+		</span>
+	</div>
+	<div class='form-group'>
+		<label for='endDate'>End Date</label>
+		<input type='text' class='form-control' name='endDate' uib-datepicker-popup ng-model='endDate' is-open='endDateConfig.opened' min-date='startDate' required close-text='Close'/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && dataSetForm.endDate.$touched && dataSetForm.endDate.$error.required'>Please enter an end date.</span>
+		<span class='input-group-btn'>
+                <button type='button' class='btn btn-default' ng-click='endDateConfig.open()'><i class='glyphicon glyphicon-calendar'></i></button>
+              </span>
+	</div>
+	<div class='form-group'>
+		<label for='file'>File input</label>
+		<input type='file' file-model='file'/>
+	</div>
+	<div>
+		<button type='button' class='btn btn-primary' ng-click='save()' ng-disabled='!isFormSubmissionAttempted && ((dataSetForm.startDate.$touched && dataSetForm.startDate.$error.required) || (dataSetForm.endDate.$touched && dataSetForm.endDate.$error.required))'>Save</button>
+		<button type='button' class='btn' ng-click='cancel()'>Cancel</button>
+	</div>
+</div>

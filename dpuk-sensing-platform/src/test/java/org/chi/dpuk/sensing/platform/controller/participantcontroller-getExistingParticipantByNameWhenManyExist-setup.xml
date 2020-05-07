@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Participant id='100' name='some name 1' address='some address 1'
+		contactNumber='01132456789'>
+	</Participant>
+	<Participant id='200' name='some name 1' address='some address 2'
+		contactNumber='01234567890'>
+	</Participant>
+	<Participant id='300' name='some name 3' address='some address 3'
+		contactNumber='0645464646'>
+	</Participant>
+</dataset>

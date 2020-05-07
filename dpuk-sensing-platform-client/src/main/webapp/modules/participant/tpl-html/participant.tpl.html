@@ -1,0 +1,28 @@
+<h3>{{formTitle}}</h3>
+<div id='participantForm' ng-form name='participantForm' novalidate>
+	<div class='form-group'>
+		<label for='inputName'>Name</label>
+		<input id='inputName' class='form-control' type='text' name='name' ng-model='participant.name'/>
+	</div>
+	<div class='form-group'>
+		<label for='inputAddress'>Address</label>
+		<input id='inputAddress' class='form-control' type='text' name='address' ng-model='participant.address'/>
+	</div>
+	<div class='form-group'>
+		<label for='inputContactNumber'>Contact Number</label>
+		<input id='inputContactNumber' class='form-control' type='text' name='contactNumber' ng-model='participant.contactNumber' ng-pattern='/^[0-9()+ ]{5,}$/' empty-to-null/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && participantForm.contactNumber.$touched && participantForm.contactNumber.$error.pattern'>If a contact number is provided, it must be valid.</span>
+	</div>
+	<div class='form-group'>
+		<label for='inputNhsNumber'>NHS Number</label>
+		<input id='inputNhsNumber' class='form-control' type='text' name='nhsNumber' ng-model='participant.nhsNumber' ng-pattern='/^[0-9]{10}$/' empty-to-null/>
+		<span class='help-inline ct-error-text' ng-show='!isFormSubmissionAttempted && participantForm.nhsNumber.$touched && participantForm.nhsNumber.$error.pattern'>If an NHS number is provided, it must be a 10 digit number.</span>
+	</div>
+	<div>
+		<button type='button' class='btn btn-primary' ng-click='save()'>Save</button>
+		<button type='button' class='btn' ng-click='cancel()'>Cancel</button>
+	</div>
+	<div class='ct-error-text top-buffer bottom-buffer'>
+		<div ng-show='isFormSubmissionAttempted && participantForm.contactNumber.$invalid'>If a contact number is provided, it must be a valid.</div>
+	</div>
+</div>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+	<Participant name='some name 1' contactNumber='01132456789'
+		nhsNumber='9999999999'>
+	</Participant>
+</dataset>
